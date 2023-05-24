@@ -1,0 +1,20 @@
+<p>product works!</p>
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 col-sm-6 col-12" *ngFor="let pro of listProducts"> 
+        
+<div class="card" style="width: 18rem;" >
+    <img src="https://static.massimodutti.net/3/photos//2023/V/0/1/p/6823/540/251/6823540251_2_6_16.jpg?t=1679909187345&impolicy=massimodutti-itxmediumhigh&imwidth=800&imformat=chrome" class="card-img-top" alt="">
+    <div class="card-body">
+      <h5 class="card-title">{{pro.title}}</h5>
+      <p class="card-text">Price:{{pro.price}}</p>
+      <p class="card-text">Quantity:{{pro.quantity}}</p>
+      <p class="card-text">Likes:{{pro.like}}</p>
+      <button class="btn btn-primary"(click)="buy(pro)"[disabled]="pro.quantity==0">Buy</button>
+      <button class="btn btn-primary" >Go Somewhere</button>
+    </div>
+  </div>
+    
+</div>
+</div>
+</div>

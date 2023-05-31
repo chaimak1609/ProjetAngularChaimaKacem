@@ -1,0 +1,73 @@
+<form #f="ngForm" (ngSubmit)="Add()">
+    <div class="form-group">
+        <label class="form-label" for="">title:</label>
+        <input  class="form-control" type="text" name="title" [(ngModel)]="product.title" #title="ngModel" required minlength="3">
+        
+    <div *ngIf="title.invalid && title.touched"> <!--fonction prédefinie mawjouda f ngmodel esmha invalid chtekhou soit true or false autre fonction : touched : bsh naarf est ce que nzel ala input ou nn bsh yaffichi l msg -->
+        <div *ngIf="title.errors?.['required']"> 
+            title is required! 
+       </div>
+        <div *ngIf="title.errors?.['minlength']">
+            title must have at least 3 charcters!
+        </div>
+        
+    </div>
+    </div>
+    <div class="form-group">
+        <label class="form-label" for="">Price:</label>
+        <input  class="form-control" type="number" name="price" [(ngModel)]="product.price" #price="ngModel" required min="0" >
+      
+        <div *ngIf="price.invalid && price.touched"> <!--fonction prédefinie mawjouda f ngmodel esmha invalid chtekhou soit true or false autre fonction : touched : bsh naarf est ce que nzel ala input ou nn bsh yaffichi l msg -->
+          <div *ngIf="price.errors?.['required']"> 
+              price is required! 
+         </div>
+          <div *ngIf="price.errors?.['min']">
+              price must have be > 0 
+          </div>
+          
+      </div>
+    </div>
+
+    <div class="form-group" >
+            <label class="form-label">Quantity:</label>
+            <input  class="form-control" type="number" name="quantity" [(ngModel)]="product.quantity" #quantity="ngModel" required min="0" >
+        
+            <div *ngIf="quantity.invalid && quantity.touched"> <!--fonction prédefinie mawjouda f ngmodel esmha invalid chtekhou soit true or false autre fonction : touched : bsh naarf est ce que nzel ala input ou nn bsh yaffichi l msg -->
+                <div *ngIf="quantity.errors?.['required']"> 
+                    quantity is required! 
+               </div>
+                <div *ngIf="quantity.errors?.['min']">
+                    quantity must have be > 0 
+                </div>
+                
+            </div>
+        
+       
+        </div>
+        
+        <div class="form-group" >
+            <label class="form-label">email:</label>
+            <input  class="form-control" type="email" name="email" ngModel #email="ngModel" pattern="[a-zA-Z][a-zA-Z0-9.*+]*@[a-zA-Z]+\.[a-zA-Z]{2,4}">
+            <div *ngIf="email.invalid && email.touched"> <!--fonction prédefinie mawjouda f ngmodel esmha invalid chtekhou soit true or false autre fonction : touched : bsh naarf est ce que nzel ala input ou nn bsh yaffichi l msg -->
+                <div *ngIf="email.errors?.['pattern']"> 
+                    email invalid!
+               </div>
+           
+                
+            </div>
+        
+       
+        </div>
+        
+        
+        
+        
+      <div class="form-group">
+          <input type="submit" class="btn btn-success" value="ajouter" [disabled]="f.invalid">
+          
+    </div>
+
+</form>
+{{product.title}}
+{{product.price}}
+{{product.quantity}}

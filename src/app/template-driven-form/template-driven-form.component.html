@@ -1,0 +1,7 @@
+<form #f="ngForm" (ngSubmit)="Add()">
+    <div class="form-group">
+        <label class="form-label" for="">Name:</label>
+infosg:InfosG=new InfosG();
+        <input  class="form-control" type="text" name="title" [(ngModel)]="infosg.Nom" #title="ngModel" required minlength="3">
+    </div>
+    </form>

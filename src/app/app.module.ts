@@ -14,7 +14,7 @@ import { FormsModule } from '@angular/forms';
 import { TemplateDrivenFormComponent } from './template-driven-form/template-driven-form.component';
 //import { OffresEmploiComponentComponent } from './offres-emploi-component/offres-emploi-component.component';
 //import {Routes} from '@angular/router';
-
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +32,8 @@ import { TemplateDrivenFormComponent } from './template-driven-form/template-dri
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

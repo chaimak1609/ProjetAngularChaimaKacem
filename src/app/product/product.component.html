@@ -11,6 +11,8 @@
       <p class="card-text">Quantity:{{pro.quantity}}</p>
       <p class="card-text">Likes:{{pro.like}}</p>
       <button class="btn btn-primary"(click)="buy(pro)"[disabled]="pro.quantity==0">Buy</button>
+      <button class="btn btn-primary"(click)="delete(pro.id)">Delete</button>
+
       <button class="btn btn-primary" >Go Somewhere</button>
     </div>
   </div>
